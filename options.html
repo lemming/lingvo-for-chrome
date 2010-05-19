@@ -1,0 +1,148 @@
+<!-- TODO:
+перевод всего
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Lingvo for Chrome Options</title>
+<style type="text/css">
+body {
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: .9em
+}
+h2 {
+    line-height: 48px;
+    background: url('img/icon-48x48.png') no-repeat left;
+    padding-left: 48px
+}
+h3 {
+    background-color: #C52423;
+    color: white;
+    text-shadow: 0 1px 0 black;
+    padding: 4px 20px;
+    -webkit-border-radius: 4px
+}
+#content > div {
+    display: table-row
+}
+#content > div > div {
+    display: table-cell;
+    padding: 0 10px
+}
+</style>
+</head>
+<body>
+<div style="text-align:center">
+  <div id="content" style="width: 600px; margin:auto; text-align:left">
+    <h2 class="i18n">optHeader</h2>
+    <h3 class="i18n">optAppearance</h3>
+    <div>
+      <div class="i18n" style="width:300px">optTheme</div>
+      <div>
+        <input type="radio" name="theme" id="theme_blue" checked="checked" value="blue"/><label for="theme_blue">blue</label>
+        <input type="radio" name="theme" id="theme_red" value="red"/><label for="theme_red">red</label>
+      </div>
+    </div>
+    <div>
+      <div class="i18n">optMaxWidth</div>
+      <div><input type="text" name="maxWidth" />px</div>
+    </div>
+    <div>
+      <div class="i18n">optMaxHeight</div>
+      <div><input type="text" name="maxHeight" />px</div>
+    </div>
+    <h3 class="i18n">optDefaultLang</h3>
+    <div style="display: block; text-align:center">
+      <select name="lang">
+        <option value="en" class="i18n">langEn</option>
+        <option value="de" class="i18n">langDe</option>
+        <option value="fr" class="i18n">langFr</option>
+        <option value="it" class="i18n">langIt</option>
+        <option value="sp" class="i18n">langSp</option>
+        <option value="uk" class="i18n">langUkr</option>
+        <option value="la" class="i18n">langLat</option>
+      </select>
+    </div>
+    <h3 class="i18n">optHotkeys</h3>
+    <div><div class="i18n">optSelectAndTranslate</div><div class="i18n">optCtrlPlusDblclck</div></div>
+    <div><div class="i18n">optTranslateSelection</div>
+    <select name="shortcutModifier">
+      <option value="ctrl">Ctrl</option>
+      <option value="alt" selected="selected">Alt</option>
+      <option value="shift">Shift</option>
+    </select>
+        +
+    <select name="shortcutKey">
+      <option value="65">A</option>
+      <option value="66">B</option>
+      <option value="67">C</option>
+      <option value="68">D</option>
+      <option value="69">E</option>
+      <option value="70">F</option>
+      <option value="71">G</option>
+      <option value="72">H</option>
+      <option value="73">I</option>
+      <option value="74">J</option>
+      <option value="75">K</option>
+      <option value="76" selected="selected">L</option>
+      <option value="77">M</option>
+      <option value="78">N</option>
+      <option value="79">O</option>
+      <option value="80">P</option>
+      <option value="81">Q</option>
+      <option value="82">R</option>
+      <option value="83">S</option>
+      <option value="84">T</option>
+      <option value="85">U</option>
+      <option value="86">V</option>
+      <option value="87">W</option>
+      <option value="88">X</option>
+      <option value="89">Y</option>
+      <option value="90">Z</option>
+    </select>
+    </div>
+    <div style="display: block; text-align:center">
+      <button id="save" class="i18n">optSave</button>
+    </div>
+  </div>
+</div>
+<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+    // restore options
+    for (name in localStorage) {
+        $('[name=' + name + ']').val(localStorage[name].split(","));
+    }
+    // i18n
+    /* just a little helper *
+    var messagesJson = [];
+    $('.i18n').each(function() {
+        messagesJson.push('    "' + $(this).text() + '": {' + "\n" + '        "message": ""' + "\n    }" );
+    });
+    console.log(messagesJson.join(', \n'));
+    /**/
+    $('.i18n').text(function(index, text) {
+        return(chrome.i18n.getMessage(text));
+    });
+    // save options
+    $('#save').click(function() {
+        $('select, :text, :radio:checked').each(function() {
+            localStorage[$(this).attr('name')] = $(this).val();
+        });
+        /*
+        var tmpStorage = {};
+        $(':checkbox:checked').each(function() {
+            var name = $(this).attr('name');
+            if (tmpStorage[name] == undefined)
+                tmpStorage[name] = [$(this).val()];
+            else
+                tmpStorage[name].push($(this).val());
+        });
+        for (key in tmpStorage)
+            localStorage[key] = tmpStorage[key];
+        */
+    });
+});
+</script>
+</body>
+</html>

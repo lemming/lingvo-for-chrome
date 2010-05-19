@@ -1,0 +1,67 @@
+{
+    "extName": {
+        "message": "Lingvo for Chrome",
+        "description": "extension name"
+    },
+    "extDescription": {
+        "message": "Get translation of any word on page just with Ctrl + Double Click. Uses Abbyy Online Dictionary",
+        "description": "extension discription"
+    },
+    "noMatches": {
+        "message": "Sorry, no matches found"
+    },
+    "optHeader": {
+        "message": "Lingvo for Chrome"
+    }, 
+    "optAppearance": {
+        "message": "Appearance"
+    }, 
+    "optTheme": {
+        "message": "Theme"
+    }, 
+    "optMaxWidth": {
+        "message": "Maximum window width"
+    }, 
+    "optMaxHeight": {
+        "message": "Maximum window height"
+    }, 
+    "optDefaultLang": {
+        "message": "Default translation language"
+    }, 
+    "langEn": {
+        "message": "English"
+    }, 
+    "langDe": {
+        "message": "German"
+    }, 
+    "langFr": {
+        "message": "French"
+    }, 
+    "langIt": {
+        "message": "Italian"
+    }, 
+    "langSp": {
+        "message": "Spanish"
+    }, 
+    "langUkr": {
+        "message": "Ukrainian"
+    }, 
+    "langLat": {
+        "message": "Latin"
+    }, 
+    "optHotkeys": {
+        "message": "Hotkeys"
+    }, 
+    "optSelectAndTranslate": {
+        "message": "Select the word and get its translation"
+    }, 
+    "optCtrlPlusDblclck": {
+        "message": "Ctrl + Double click"
+    }, 
+    "optTranslateSelection": {
+        "message": "Translate selected word"
+    }, 
+    "optSave": {
+        "message": "Save"
+    }
+}

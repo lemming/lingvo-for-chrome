@@ -1,0 +1,44 @@
+#dictionary_box > div {
+    color: black;
+    background-color: white;
+    padding: 0 4px 8px 4px;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 13px;
+    text-align: left
+}
+#dictionary_box .Bold {
+    font-weight: bold
+}
+#dictionary_box .Italic {
+    font-style: italic
+}
+#dictionary_box .lol-card {
+    margin-bottom: 8px
+}
+#dictionary_box .lol-card-panel {
+    text-align: right
+}
+#dictionary_box .lol-dict-name {
+    color: #888;
+    font-size: 0.9em;
+    text-align: right;
+    float: right
+}
+#dictionary_box .Abbrev {
+    font-style: italic;
+}
+#dictionary_box a {
+    padding: 0 13px 0 0;
+    color: blue !important;
+    background: no-repeat right;
+    /*background-image: url('chrome-extension://__MSG_@@extension_id__/img/external_link.png');*/
+}
+#dictionary_box img.transcription {
+    margin: 0;
+    position: relative;
+    top: 4px
+}
+#dictionary_box .comment {
+    display: inline;
+    color: black
+}

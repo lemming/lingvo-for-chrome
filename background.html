@@ -1,0 +1,39 @@
+<html>
+<script type="text/javascript" charset="utf-8">
+function load(callback) {
+    chrome.tabs.executeScript(null, {file: "lib/jquery-1.4.2.min.js"}, function() {
+        chrome.tabs.executeScript(null, {file: "lib/jquery-ui-1.8.1.custom.min.js"}, function() {
+            callback(localStorage);
+        });
+    });
+}
+function getTranslation(callback, needle, tab) {
+    var lang = (localStorage['lang'] == undefined) ? 'en' : localStorage['lang'];
+    var xhr = new XMLHttpRequest();
+    var url = "http://lingvo.abbyyonline.com/en/" + lang  + "-ru/" + needle;
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            callback(xhr.responseText);
+        }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+function getOptions(callback) {
+    callback(localStorage);
+}
+
+function onRequest(request, sender, callback) {
+    if (request.action == 'getTranslation') {
+        getTranslation(callback, request.needle);
+    } else if (request.action == 'load') {
+        load(callback);
+    } else if (request.action == 'getOptions') {
+        getOptions(callback);
+    }
+};
+
+chrome.extension.onRequest.addListener(onRequest);
+</script>
+</html>

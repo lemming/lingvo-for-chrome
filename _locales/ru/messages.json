@@ -1,0 +1,67 @@
+{
+    "extName": {
+        "message": "Lingvo для Chrome",
+        "description": "название расширения"
+    },
+    "extDescription": {
+        "message": "Перевод любого слова на странице с использованием Abbyy Lingvo Online",
+        "description": "описание расширения"
+    },
+    "noMatches": {
+        "message": "К сожалению, перевод не найден"
+    },
+    "optHeader": {
+        "message": "Lingvo для Chrome"
+    }, 
+    "optAppearance": {
+        "message": "Внешний вид"
+    }, 
+    "optTheme": {
+        "message": "Тема оформления"
+    }, 
+    "optMaxWidth": {
+        "message": "Максимальная ширина окна с переводом"
+    }, 
+    "optMaxHeight": {
+        "message": "Максимальная высота"
+    }, 
+    "optDefaultLang": {
+        "message": "Язык перевода по умолчанию"
+    }, 
+    "langEn": {
+        "message": "Английский"
+    }, 
+    "langDe": {
+        "message": "Немецкий"
+    }, 
+    "langFr": {
+        "message": "Французский"
+    }, 
+    "langIt": {
+        "message": "Итальянский"
+    }, 
+    "langSp": {
+        "message": "Испанский"
+    }, 
+    "langUkr": {
+        "message": "Украинский"
+    }, 
+    "langLat": {
+        "message": "Латынь"
+    }, 
+    "optHotkeys": {
+        "message": "Горячие клавиши"
+    }, 
+    "optSelectAndTranslate": {
+        "message": "Выделить слово и перевести"
+    }, 
+    "optCtrlPlusDblclck": {
+        "message": "Ctrl + Двойной щелчок мыши"
+    }, 
+    "optTranslateSelection": {
+        "message": "Перевод выделенного слова"
+    }, 
+    "optSave": {
+        "message": "Сохранить"
+    }
+}
