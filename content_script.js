@@ -102,9 +102,14 @@ function onGetTranslation(data) {
         "border": "1px solid" + settings.borderColor,
         "z-index": "32767"
     });
-
-    $dictBox.css('left', lastHitPosition[0]);
-    $dictBox.css('top', lastHitPosition[1] + 12);
+    
+    if (lastHitPosition[0]) {
+        $dictBox.css('left', lastHitPosition[0]);
+        $dictBox.css('top', lastHitPosition[1] + 12);
+    } else {
+        $dictBox.css('left', $(window).width() / 2 - $dictBox.width() / 2);
+        $dictBox.css('top', $(window).scrollTop() + $(window).height() / 2  - $dictBox.height() / 2);
+    }
     $dictBox.show();
 }
 
