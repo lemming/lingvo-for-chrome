@@ -2,7 +2,10 @@
     "name": "__MSG_extName__",
     "version": "1.0",
     "description": "__MSG_extDescription__",
-    "icons": { "128": "img/icon.png" },
+    "icons": {
+        "16": "img/icon-16x16.png",
+        "128": "img/icon.png"
+    },
     "default_locale": "en",
     "background_page": "background.html",
     "options_page": "options.html",
@@ -13,6 +16,6 @@
         "js": [ "content_script.js" ]
     }],
     "permissions": [
-        "tabs", "http://*/*"
+        "tabs", "http://*/*", "contextMenus"
     ]
 }

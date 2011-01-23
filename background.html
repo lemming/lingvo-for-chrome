@@ -24,6 +24,12 @@ function getOptions(callback) {
     callback(localStorage);
 }
 
+var contextMenuItemId = chrome.contextMenus.create({"title": chrome.i18n.getMessage('getTranslation'), "contexts":["selection"],
+                                     "onclick": function(){}});
+function assignContextMenu(callback) {
+    chrome.contextMenus.update(contextMenuItemId, { "onclick": callback});
+}
+
 function onRequest(request, sender, callback) {
     if (request.action == 'getTranslation') {
         getTranslation(callback, request.needle);
@@ -31,6 +37,8 @@ function onRequest(request, sender, callback) {
         load(callback);
     } else if (request.action == 'getOptions') {
         getOptions(callback);
+    } else if (request.action == 'assignContextMenu') {
+        assignContextMenu(callback);
     }
 };
 

@@ -7,6 +7,10 @@
         "message": "Перевод любого слова на странице с использованием Abbyy Lingvo Online",
         "description": "описание расширения"
     },
+    "getTranslation": {
+        "message": "Перевести",
+        "description": "пункт контекстного меню"
+    },
     "noMatches": {
         "message": "К сожалению, перевод не найден"
     },

@@ -7,6 +7,10 @@
         "message": "Get translation of any word on page just with Ctrl + Double Click. Uses Abbyy Online Dictionary",
         "description": "extension discription"
     },
+    "getTranslation": {
+        "message": "Get translation",
+        "description": "context menu item title"
+    },
     "noMatches": {
         "message": "Sorry, no matches found"
     },

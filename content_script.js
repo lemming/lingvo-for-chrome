@@ -49,6 +49,10 @@ function onLoad(options) {
         if ($dictBox.is(':visible')) $dictBox.hide();
     });
 
+    $(document).select(function() {
+        console.log('something is selected');
+    });
+
     $dictBox.draggable({cancel: '.lol-cards'});
     $('body').append($dictBox);
     chrome.extension.sendRequest({ "action" : "getTranslation", "needle" : selection }, onGetTranslation);
@@ -128,6 +132,18 @@ function onDblClick(e) {
     }
 }
 
+function onContextMenu() {
+    selection = String(window.getSelection());
+    selection = selection.replace(/^\s+|\s+$/g, '');
+    if (selection != '') {
+        if (loaded)
+            chrome.extension.sendRequest({ "action" : "getTranslation", "needle" : selection }, onGetTranslation);
+        else
+            load();
+    }
+    chrome.extension.sendRequest({ "action": "assignContextMenu" }, onContextMenu);
+}
+
 function checkModifier(e, modifier) {
     if (modifier == 'alt')
         return e.altKey;
@@ -166,6 +182,7 @@ function initialize() {
         window.addEventListener('dblclick', onDblClick, false);
         window.addEventListener('keydown', onKeyDown, false);
     });
+    chrome.extension.sendRequest({ "action": "assignContextMenu" }, onContextMenu);
 }
 
 initialize();
